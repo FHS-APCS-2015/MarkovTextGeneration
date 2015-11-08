@@ -4,7 +4,7 @@ public class Tester {
 
 	public static void main(String[] args) {
 		TextModel model = new TextModel();	// create your model
-		model.loadData("mobydick.txt");		// load the data
+		model.loadData("Siddarta.txt");		// load the data
 
 		String output = "";
 
