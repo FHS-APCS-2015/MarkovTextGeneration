@@ -14,7 +14,9 @@ public class Tester {
 		for (int i = 0; i < MAX_WORD_LENGTH; i++) {
 			String nextWord = model.predictNextWord(word);
 			
-			output += nextWord + " ";
+			output += " " + nextWord ;
+			
+			if (i % 8 == 0) output += "\n";    // add some line breaks in the output
 			
 			word = nextWord;
 		}
