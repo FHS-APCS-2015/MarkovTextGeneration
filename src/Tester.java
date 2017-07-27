@@ -1,26 +1,28 @@
 public class Tester {
 
-	private static final int MAX_WORD_LENGTH = 100;
+	private static final int NUM_WORDS_TO_GENERATE = 100;
 
 	public static void main(String[] args) {
-		TextModel model = new TextModel();	// create your model
-		model.loadData("Siddarta.txt");		// load the data
+		TextModel model = new TextModel(); // create your model
+		model.loadData("Siddarta.txt"); // load the data
 
-		String output = "";
+		String generatedOutput = "";
 
-		String word = "His";			// Choose starting word
-		output += word;
+		String currentWord = "His"; // Choose starting word
+		generatedOutput += currentWord;
 
-		for (int i = 0; i < MAX_WORD_LENGTH; i++) {
-			String nextWord = model.predictNextWord(word);
-			
-			output += " " + nextWord ;
-			
-			if (i % 8 == 0) output += "\n";    // add some line breaks in the output
-			
-			word = nextWord;
+		for (int i = 0; i < NUM_WORDS_TO_GENERATE; i++) {
+			String nextWord = model.predictNextWord(currentWord);
+
+			generatedOutput += " " + nextWord;
+
+			if (i % 8 == 0)
+				generatedOutput += "\n"; // add some line breaks in the output
+
+			currentWord = nextWord;
 		}
 
-		System.out.println(output);
+		System.out.println(generatedOutput);
 	}
 }
+
