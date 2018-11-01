@@ -12,7 +12,7 @@ public class Tester {
 		generatedOutput += currentWord;
 
 		for (int i = 0; i < NUM_WORDS_TO_GENERATE; i++) {
-			String nextWord = model.predictNextWord(currentWord);
+			String nextWord = model.simulateNextWord(currentWord);
 
 			generatedOutput += " " + nextWord;
 

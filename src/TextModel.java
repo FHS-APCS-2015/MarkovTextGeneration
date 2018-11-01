@@ -3,18 +3,18 @@ import java.io.FileReader;
 import java.util.HashMap;
 
 public class TextModel {
-	private HashMap<String, Bag> map;
+	private HashMap<String, StatsObj> map;
 
 	public TextModel() {
-		map = new HashMap<String, Bag>();
+		map = new HashMap<String, StatsObj>();
 	}
 
-	private Bag getBagForWord(String word) {
-		Bag b = null;
+	private StatsObj getStatsObjForWord(String word) {
+		StatsObj b = null;
 		if (map.containsKey(word)) {
 			b = map.get(word);
 		} else {
-			b = new Bag();
+			b = new StatsObj(3);
 			map.put(word, b);
 		}
 		
@@ -32,7 +32,7 @@ public class TextModel {
 		// Add all words in text to your model
 	}
 	
-	public String predictNextWord(String word) {
+	public String simulateNextWord(String word) {
 		/* you implement this! */
 		
 		return "IMPLEMENT PREDICTNEXTWORD";
