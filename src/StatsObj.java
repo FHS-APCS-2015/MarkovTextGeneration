@@ -79,7 +79,7 @@ public class StatsObj {
             if (num < sum) return str;
         }
 
-        return "ERROR in getRandom()!";
+        return null;
     }
 
     public String toString() {
