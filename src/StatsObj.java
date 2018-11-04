@@ -41,20 +41,22 @@ public class StatsObj {
             mostFreq.remove(string);        // and re-insert it
         }
 
+        int index = indexToInsertAt(string);    // find where to insert it
+        mostFreq.add(index, string);
+
+        if (mostFreq.size() > this.n) {         // if our list is too big, remove least frequent
+            mostFreq.remove( mostFreq.size() - 1 );
+        }
+    }
+
+    private int indexToInsertAt(String string) {
         for (int i = 0; i < mostFreq.size(); i++) {
             if (getCountOf(string) > getCountOf(mostFreq.get(i))) {
-                mostFreq.add(i, string);                     // insert it
-                if (mostFreq.size() > n) {
-                    mostFreq.remove(mostFreq.size() - 1);  // remove the last one
-                }
-                return;
+                return i;
             }
         }
 
-        if (mostFreq.size() < this.n) {     // if we didn't insert it yet
-            mostFreq.add(string);           // do so!
-            return;
-        }
+        return mostFreq.size();
     }
 
     public String getMostFrequent() {
@@ -73,13 +75,13 @@ public class StatsObj {
             return null;
         }
 
-        int sum = 0;
+        int upperBound = 0;
         for (String str : data.keySet()) {
-            sum += data.get(str);
-            if (num < sum) return str;
+            upperBound += data.get(str);
+            if (num < upperBound) return str;
         }
 
-        return null;
+        return "ERROR in getRandom()!";
     }
 
     public String toString() {
