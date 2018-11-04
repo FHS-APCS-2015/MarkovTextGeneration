@@ -28,8 +28,12 @@ public class TextModel {
 
 	public void loadData(String filename) {
 		String text = getFileAsString(filename);
-		
+		text = text.replaceAll("\\s+", " ").trim();  // collapse whitespace to single spaces
+		String[] words = text.split(" ");  // split by space
+
 		// Add all words in text to your model
+		// words is a String array of individual words from your input text.
+
 	}
 	
 	public String simulateNextWord(String word) {
