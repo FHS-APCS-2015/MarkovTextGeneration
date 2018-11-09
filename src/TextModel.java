@@ -48,7 +48,7 @@ public class TextModel {
 			BufferedReader br = new BufferedReader(new FileReader(path));
 			String line = br.readLine();
 			while (line != null) {
-				b.append(line);
+				b.append(line + "\n");
 				line = br.readLine();
 			}
 		} catch (Exception e) {
